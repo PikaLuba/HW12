@@ -10,8 +10,8 @@ import java.sql.SQLException;
 public class DataSource {
     private static DataSource INSTANCE;
     private static final String DB_URL = "jdbc:mysql://localhost:3306/world";
-    private static final String DB_USER = "ro0ot";
-    private static final String DB_PASSWORD = "22332323";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "1122334455";
 
     private static HikariConfig config = new HikariConfig();
     private static HikariDataSource ds;
