@@ -17,9 +17,9 @@ public class Demo {
         ClientCrudService clientCrudService = new ClientCrudService();
 
         Client newClient1 = new Client();
-        newClient1.setName("Boris");
+        newClient1.setName("Leyla");
         int result = clientCrudService.createClient(newClient1);
-        System.out.println("1. INSERT client Name = Boris : Id = " + result);
+        System.out.println("1. INSERT client Name = Leyla : Id = " + result);
 
         Client newClient2 = clientCrudService.selectClient(result);
         System.out.println("2. SELECT client = " + newClient2.getId() + " " + newClient2.getName());
