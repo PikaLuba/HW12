@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Table(name = "Client")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +16,16 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Client {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private int id;
+
+    @Column
+    private String name;
+
+    @OneToMany(mappedBy = "client")
+    private List<Ticket> ticketList;
+
     public static AssociationOverride builder() {
         return null;
     }
@@ -21,7 +33,6 @@ public class Client {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -29,17 +40,17 @@ public class Client {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    private int id;
+    public List<Ticket> getTicketList() {
+        return ticketList;
+    }
+    public void setTicketList(List<Ticket> ticketList) {
+        this.ticketList = ticketList;
+    }
 
-    @Column
-    private String name;
 }
 
 
